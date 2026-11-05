@@ -25,7 +25,7 @@ Render's health check is `GET /api/health` and now verifies database connectivit
 ### 2. Deploy the frontend on Vercel
 
 1. Import the same repository into Vercel and leave the project Root Directory at the repository root. `vercel.json` installs and builds the Vite app from `frontend/`, publishes `frontend/dist`, and rewrites page routes to `index.html` for React Router deep links.
-2. Set the Vercel environment variable `VITE_API_URL` to the Render API origin with `/api` appended, for example `https://kokwet-api.onrender.com/api`. Do not put backend secrets in Vercel; variables prefixed with `VITE_` are included in browser code.
+2. Set the Vercel environment variable `VITE_API_URL` to `https://kokwetbck-v2.onrender.com/api` for Production, Preview, and Development, then redeploy. The frontend defaults to this Render API outside localhost; local development defaults to `http://127.0.0.1:8000/api`. Do not put backend secrets in Vercel; variables prefixed with `VITE_` are included in browser code.
 3. Deploy a Preview first. Verify direct navigation and refresh on `/marketplace`, `/culture`, `/tickets/{order_id}`, `/login`, and `/dashboard`, then set the canonical custom domain and add that exact origin to Render's `KOKWET_CORS_ORIGINS`.
 4. Keep `VITE_ANDROID_COMPANION_STORE_URL` unset until the companion has a verified public store listing.
 

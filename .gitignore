@@ -1,0 +1,12 @@
+backend/data/
+backend/.env
+backend/.env.*
+!backend/.env.example
+frontend/node_modules/
+frontend/dist/
+mobile/android/.gradle/
+mobile/android/local.properties
+mobile/android/.idea/
+mobile/android/app/build/
+.env
+backend/.env

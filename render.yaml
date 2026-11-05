@@ -1,0 +1,53 @@
+services:
+  - type: web
+    name: kokwet-api
+    runtime: python
+    region: frankfurt
+    plan: starter
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT --proxy-headers
+    healthCheckPath: /api/health
+    autoDeploy: false
+    numInstances: 1
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: KOKWET_REQUIRE_DATABASE_URL
+        value: "true"
+      - key: KOKWET_DB_SCHEMA
+        value: kokwet_app
+      - key: TICKET_ENCRYPTION_KEY
+        sync: false
+      - key: MPESA_ENV
+        value: sandbox
+      - key: KOKWET_CORS_ORIGINS
+        sync: false
+      - key: KOKWET_PUBLIC_SITE_URL
+        sync: false
+      - key: CULTURE_IP_HASH_SECRET
+        sync: false
+      - key: KOKWET_STAFF_ACTIVATION_SECRET
+        sync: false
+      - key: MPESA_CONSUMER_KEY
+        sync: false
+      - key: MPESA_CONSUMER_SECRET
+        sync: false
+      - key: MPESA_SHORTCODE
+        sync: false
+      - key: MPESA_PASSKEY
+        sync: false
+      - key: MPESA_CALLBACK_URL
+        sync: false
+      - key: CULTURE_WEBHOOK_SECRET
+        sync: false
+      - key: KOKWET_SMTP_HOST
+        sync: false
+      - key: KOKWET_SMTP_PORT
+        value: "587"
+      - key: KOKWET_SMTP_USERNAME
+        sync: false
+      - key: KOKWET_SMTP_PASSWORD
+        sync: false
+      - key: KOKWET_SMTP_FROM_EMAIL
+        sync: false

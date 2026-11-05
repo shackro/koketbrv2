@@ -2,7 +2,7 @@ services:
   - type: web
     name: kokwet-api
     runtime: python
-    region: frankfurt
+    region: ohio
     plan: starter
     rootDir: backend
     buildCommand: pip install -r requirements.txt
@@ -11,6 +11,8 @@ services:
     autoDeploy: false
     numInstances: 1
     envVars:
+      - key: APP_ENV
+        value: production
       - key: DATABASE_URL
         sync: false
       - key: KOKWET_REQUIRE_DATABASE_URL

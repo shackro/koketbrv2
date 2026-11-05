@@ -140,8 +140,7 @@ Remaining gaps identified in the page inventory:
 
 1. Move remaining Open Hearth page copy and any other still-human-maintained
    page microcopy into staff-managed content.
-2. Audit profile, mentorship and feedback submissions for durable backend
-   storage where those flows need staff follow-up.
+2. Add staff review workflows for persisted mentorship and feedback submissions.
 3. Run broader end-to-end checks for visitor, admin and each delegated-staff
    capability; the frontend production build and live public content endpoint
    have been verified.

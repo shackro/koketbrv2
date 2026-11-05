@@ -10,3 +10,8 @@ mobile/android/.idea/
 mobile/android/app/build/
 .env
 backend/.env
+/data/
+*.key
+__pycache__/
+**/__pycache__/
+*.py[cod]

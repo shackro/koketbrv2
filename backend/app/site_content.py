@@ -16,6 +16,8 @@ staff_router = APIRouter(prefix="/api/v1/staff", tags=["Site content management"
 
 def _validate_media_url(value: str) -> str:
     normalized = value.strip()
+    if not normalized:
+        return normalized
     if normalized.startswith("/") and not normalized.startswith("//") and ".." not in normalized:
         return normalized
     parsed = urlparse(normalized)

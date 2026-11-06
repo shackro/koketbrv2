@@ -35,8 +35,8 @@ the existing bearer-token session and check permissions on the server.
 | Nine Houses | House name, anchor, heritage, dialect, achievement, ordering | SQLite-backed profiles rendered from the shared content API | Nine ordered SQLite house profiles; admin |
 | House voice viewer | Up to three attributed weekly community nominations per selected house | SQLite weekly selections; server-side cap is three | Weekly community nominations remain separate from the 48-hour staff-curated slots |
 | House voice stories | Three audio-first voice-note slots per house, with optional caption and cover; text-only notes allowed; expires 48 hours after publish/update | SQLite `house_voice_stories`; public expiry filtering; rolling 48-hour publish/update cap of five per house/slot; staff event audit; read marks stored in visitor browser | Small circles with short titles sit directly before History & Heritage; tapping opens a reading/listening window and Mark as read action. Admins manage all houses and assigned staff manage their houses; authorized staff can record/upload, preview, replace/remove audio, and use a cover upload or URL |
-| Impact | Hero, pathways, report and allocations, goals | SQLite JSON document; admin API and staff editor already exist | Keep schema/API; admin |
-| Roadmap | Heading, copy, phases, milestones and statuses | SQLite JSON document; admin API and staff editor already exist | Keep schema/API; admin |
+| Impact | Hero/pathway images and copy, section headings, transparency labels, report/allocation controls, goals and statuses | SQLite JSON document; admin API and staff editor | Admin can upload images or paste an HTTPS URL, edit page-component copy, and add/reorder/remove content within validated limits |
+| Roadmap | Hero/phase images, headings, section labels, feedback copy, phases, milestones and statuses | SQLite JSON document; admin API and staff editor | Admin can upload images or paste an HTTPS URL, edit page-component copy, and add/reorder/remove content within validated limits |
 | Services | Page heading, service-card copy/icons, mentorship prompt and illustrative naming guide; attribution requires explicit consent | SQLite-backed site-content document | Page content; admin |
 | Marketplace | Heading and pass/event display | Persistent SQLite event/pass records and site-content copy | Persistent event/pass records and page copy; admin |
 | Staff and artist settings | Accounts, roles, stories, moderation, featured voices, delegated ticket scanner access and site content | Existing staff API plus SQLite-backed site-content document | Admin control room; scanner access granted per staff account |
@@ -133,8 +133,9 @@ The SQLite content/catalog APIs, shared public content fetch, homepage controls,
 house profiles, per-account story/house/live permissions, event/pass editor,
 Impact/Roadmap editors, and external-stream live companion/control pages are
 implemented. The community spotlight, including its mission points, role cards,
-pathways, images, labels and destinations, is now editable in the staff content
-editor.
+pathways, images, labels and destinations, is editable in the staff content
+editor. Impact and Roadmap image fields and page-component copy are managed from
+their dedicated admin tabs and remain compatible with existing saved content.
 
 Remaining gaps identified in the page inventory:
 
